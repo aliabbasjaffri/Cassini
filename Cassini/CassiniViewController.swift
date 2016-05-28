@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CassiniViewController: UIViewController
+class CassiniViewController: UIViewController, UISplitViewControllerDelegate
 {
     private struct StoryBoard
     {
@@ -21,6 +21,39 @@ class CassiniViewController: UIViewController
         "Cassini" : "http://www.jpl.nasa.gov/images/cassini/20090202/pia03883-full.jpg" ,
         "Saturn" : "http://www.nasa.gov/sites/default/files/saturn_collage.jpg"
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool
+    {
+        if primaryViewController.contentViewController == self
+        {
+            if let iVC = secondaryViewController.contentViewController as? ImageViewController where iVC.imageURL == nil
+            {
+                return true
+            }
+        }
+        return false
+    }
+    
+    
+    @IBAction func showImage(sender: UIButton)
+    {
+        if let iVC = splitViewController?.viewControllers.last?.contentViewController as? ImageViewController
+        {
+            let imageName = sender.currentTitle
+            iVC.imageURL = NSURL(string:imageLinks[imageName!]!)
+            iVC.title = imageName
+        }
+        else
+        {
+            performSegueWithIdentifier(StoryBoard.ImageSegue, sender: sender)
+        }
+        
+    }
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

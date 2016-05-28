@@ -12,6 +12,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
 {
     let stanford = "http://comm.stanford.edu/wp-content/uploads/2013/01/stanford-campus.png"
     
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var scrollView: UIScrollView!
     {
@@ -29,7 +30,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     {
         get
         {
-            return imageView.image!
+            return imageView.image
         }
         set
         {
@@ -42,7 +43,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     
     var imageURL : NSURL?
     {
-        
         didSet
         {
             image = nil
@@ -59,8 +59,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
         {
             spinner?.startAnimating()
             
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)){
-                
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
+            {
                 let contentsOfURL = NSData(contentsOfURL: url)
                 
                 dispatch_async(dispatch_get_main_queue())
@@ -93,6 +93,11 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if image == nil
+        {
+            fetchImage()
+        }
     }
 
 }
