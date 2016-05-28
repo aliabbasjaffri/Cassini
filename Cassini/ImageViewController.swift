@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController
+class ImageViewController: UIViewController, UIScrollViewDelegate
 {
     let stanford = "http://comm.stanford.edu/wp-content/uploads/2013/01/stanford-campus.png"
     
@@ -17,6 +17,9 @@ class ImageViewController: UIViewController
         didSet
         {
             scrollView?.contentSize = imageView.frame.size
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 0.25
+            scrollView.maximumZoomScale = 2.5
         }
     }
     
@@ -53,6 +56,10 @@ class ImageViewController: UIViewController
                 image = UIImage(data: imageData)
             }
         }
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
     
     

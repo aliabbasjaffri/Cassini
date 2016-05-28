@@ -27,7 +27,7 @@ class CassiniViewController: UIViewController
     {
         if segue.identifier == StoryBoard.ImageSegue
         {
-            if let imageViewController = segue.destinationViewController as? ImageViewController
+            if let imageViewController = segue.destinationViewController.contentViewController as? ImageViewController
             {
                 let imageName = (sender as? UIButton)?.currentTitle
                 imageViewController.imageURL = NSURL(string:imageLinks[imageName!]!)

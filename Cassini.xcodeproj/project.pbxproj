@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1104AC1CF9ADF3006E2D7D /* extensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1104AB1CF9ADF3006E2D7D /* extensionUIViewController.swift */; };
 		5DDD69701CF97A94009A293A /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD696F1CF97A94009A293A /* CassiniViewController.swift */; };
 		5DFB94D81CF782E500B43B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB94D71CF782E500B43B1C /* AppDelegate.swift */; };
 		5DFB94DD1CF782E500B43B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB94DB1CF782E500B43B1C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D1104AB1CF9ADF3006E2D7D /* extensionUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionUIViewController.swift; sourceTree = "<group>"; };
 		5DDD696F1CF97A94009A293A /* CassiniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 		5DFB94D41CF782E500B43B1C /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFB94D71CF782E500B43B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				5DDD696F1CF97A94009A293A /* CassiniViewController.swift */,
 				5DFB94DB1CF782E500B43B1C /* Main.storyboard */,
 				5DFB94E31CF782E500B43B1C /* Info.plist */,
+				5D1104AB1CF9ADF3006E2D7D /* extensionUIViewController.swift */,
 				5DFB94E91CF783C600B43B1C /* Supporting Files */,
 			);
 			path = Cassini;
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1104AC1CF9ADF3006E2D7D /* extensionUIViewController.swift in Sources */,
 				5DFB94ED1CF7850900B43B1C /* ImageViewController.swift in Sources */,
 				5DDD69701CF97A94009A293A /* CassiniViewController.swift in Sources */,
 				5DFB94D81CF782E500B43B1C /* AppDelegate.swift in Sources */,
