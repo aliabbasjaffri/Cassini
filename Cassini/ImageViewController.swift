@@ -12,6 +12,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
 {
     let stanford = "http://comm.stanford.edu/wp-content/uploads/2013/01/stanford-campus.png"
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var scrollView: UIScrollView!
     {
         didSet
@@ -35,15 +36,20 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
     var imageURL : NSURL?
     {
+        
         didSet
         {
             image = nil
-            fetchImage()
+            if view.window != nil
+            {
+                fetchImage()
+            }
         }
     }
     
@@ -51,9 +57,26 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     {
         if let url = imageURL
         {
-            if let imageData = NSData(contentsOfURL: url)
-            {
-                image = UIImage(data: imageData)
+            spinner?.startAnimating()
+            
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)){
+                
+                let contentsOfURL = NSData(contentsOfURL: url)
+                
+                dispatch_async(dispatch_get_main_queue())
+                {
+                    if url == self.imageURL
+                    {
+                        if let imageData = contentsOfURL
+                        {
+                            self.image = UIImage(data: imageData)
+                        }
+                        else
+                        {
+                            self.spinner?.stopAnimating()
+                        }
+                    }
+                }
             }
         }
     }
@@ -66,6 +89,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
 }
