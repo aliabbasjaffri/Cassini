@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DDD69701CF97A94009A293A /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD696F1CF97A94009A293A /* CassiniViewController.swift */; };
 		5DFB94D81CF782E500B43B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB94D71CF782E500B43B1C /* AppDelegate.swift */; };
 		5DFB94DD1CF782E500B43B1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB94DB1CF782E500B43B1C /* Main.storyboard */; };
 		5DFB94DF1CF782E500B43B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB94DE1CF782E500B43B1C /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DDD696F1CF97A94009A293A /* CassiniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 		5DFB94D41CF782E500B43B1C /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFB94D71CF782E500B43B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DFB94DC1CF782E500B43B1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				5DFB94EC1CF7850900B43B1C /* ImageViewController.swift */,
+				5DDD696F1CF97A94009A293A /* CassiniViewController.swift */,
 				5DFB94DB1CF782E500B43B1C /* Main.storyboard */,
 				5DFB94E31CF782E500B43B1C /* Info.plist */,
 				5DFB94E91CF783C600B43B1C /* Supporting Files */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DFB94ED1CF7850900B43B1C /* ImageViewController.swift in Sources */,
+				5DDD69701CF97A94009A293A /* CassiniViewController.swift in Sources */,
 				5DFB94D81CF782E500B43B1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +301,7 @@
 				5DFB94E81CF782E500B43B1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
